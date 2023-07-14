@@ -3,7 +3,7 @@ import assert from "node:assert";
 
 describe('A test suite', () => {
     it('should work', () => {
-        assert.strictEqual(1, 1);
+        assert.strictEqual(10, 10);
     });
 
     it('should fail', () => {
