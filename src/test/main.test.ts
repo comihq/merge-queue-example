@@ -7,6 +7,6 @@ describe('A test suite', () => {
     });
 
     it('should fail', () => {
-        assert.strictEqual(1, 2);
+        assert.strictEqual(1, 42);
     });
 });
