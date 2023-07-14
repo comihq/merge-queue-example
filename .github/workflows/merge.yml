@@ -1,0 +1,18 @@
+name: Before merge
+
+on:
+  merge_group:
+    types:
+      - checks_requested
+    branches:
+      - main
+
+jobs:
+  before_merge:
+    name: Check before merge
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        shell: bash
+        run: echo "Hello"
