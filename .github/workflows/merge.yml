@@ -2,10 +2,7 @@ name: Before merge
 
 on:
   merge_group:
-    types:
-      - checks_requested
-    branches:
-      - main
+    types: [checks_requested]
 
 jobs:
   before_merge:
@@ -13,6 +10,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print message
-        shell: bash
-        run: echo "Hello"
+      - name: Code Review
+        uses: ./.github/actions/code-review
