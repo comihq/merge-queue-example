@@ -12,5 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+        
       - name: Code Review
         uses: ./.github/actions/code-review
