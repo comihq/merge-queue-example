@@ -1,10 +1,8 @@
 name: Execute test
 
 on:
-  pull_request:
-    branches: [main]
   merge_group:
-    branches: [main]
+    types: [checks_requested]
 
 jobs:
   run_tests:
@@ -15,14 +13,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
 
-      - name: Setup node
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
-        with:
-          node-version-file: '.node-version'
-          cache: 'npm'
-
-      - name: Compile
-        run: npm run compile
+      - name: Execute check for code review
+        uses: ./.github/actions/code-review
 
       - name: Run tests
         run: npm run test
