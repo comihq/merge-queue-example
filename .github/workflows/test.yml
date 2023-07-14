@@ -19,5 +19,8 @@ jobs:
           node-version-file: '.node-version'
           cache: 'npm'
 
+      - name: Compile
+        run: npm run compile
+
       - name: Run tests
         run: npm run test
