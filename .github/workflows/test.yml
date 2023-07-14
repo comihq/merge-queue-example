@@ -2,7 +2,7 @@ name: Execute test
 
 on:
   merge_group:
-    types: [checks_requested]
+    types: [ queued ]
 
 jobs:
   run_tests:
